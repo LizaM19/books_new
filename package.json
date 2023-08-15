@@ -29,14 +29,10 @@
     "vite": "^4.4.5"
   },
 
-  "scripts": {
-    "cs": "prettier . --write"
-  },
-
   "husky": {
     "hooks": {
-      "pre-commit": "npm run cs",
-      "pre-push": "npm run cs"
+      "pre-commit": "prettier . --write",
+      "pre-push": "prettier . --write"
     }
   }
 }
