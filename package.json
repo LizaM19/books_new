@@ -29,9 +29,14 @@
     "vite": "^4.4.5"
   },
 
-  "prettier:base": "prettier --parser typescript --single-quote",
-  "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
-  "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
+  "scripts": {
+    "cs": "prettier . --write"
+  },
 
-  "precommit": "npm run prettier:write"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run cs",
+      "pre-push": "npm run cs"
+    }
+  }
 }
